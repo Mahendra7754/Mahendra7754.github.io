@@ -9,7 +9,7 @@
 /* About portrait */
 .about-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:8%;align-items:start}
 .about-details .large-copy{margin-bottom:34px}
-.about-portrait{margin:0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
+.about-portrait{margin:0;min-width:0;border:1px solid var(--line);background:var(--panel);overflow:hidden}
 .about-portrait img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center 68%}
 .about-portrait figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:16px 20px;font:600 10px 'Space Grotesk',sans-serif;letter-spacing:.13em;color:var(--muted)}
 .about-portrait figcaption strong{color:var(--text)}
