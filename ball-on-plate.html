@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ball-on-plate control project: camera measurements, state observers, Kalman filtering, MATLAB analysis and STM32 implementation.">
+  <title>Ball-on-Plate Control | Mahendra Singh</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="ball-case">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brandmark">MS<span class="dot">.</span></span><span>ENGINEERING / PORTFOLIO</span></a>
+  <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav id="nav"><a href="index.html#about">About</a><a href="index.html#projects">Projects</a><a href="index.html#experience">Experience</a><a href="index.html#skills">Skills</a><a href="index.html#contact">Contact</a></nav>
+</header>
+<main>
+  <section class="section case-hero case-hero-v3">
+    <a class="back" href="index.html#projects">← ALL PROJECTS</a>
+    <p class="eyebrow" style="margin-top:38px">ENGINEERING CASE STUDY / CONTROL SYSTEMS / 2026</p>
+    <h1>Ball-on-Plate Control <em>with State Estimation.</em></h1>
+    <p class="case-intro">Using camera measurements, model-based observers and Kalman filtering to estimate ball motion and control a servo-actuated plate.</p>
+    <div class="case-meta"><span>PHYSICAL PROTOTYPE</span><span>FEEDBACK CONTROL</span><span>MATLAB</span><span>C / STM32</span></div>
+    <div class="case-hero-media">
+      <img src="assets/ball-on-plate/plate-setup.jpg" alt="Yellow tilting plate with a ball, servo mechanism and electronics on a laboratory bench" fetchpriority="high">
+      <div class="case-hero-caption"><strong>The ball-on-plate test rig</strong><span>Actual project hardware</span></div>
+    </div>
+    <div class="jump-links"><a href="#demonstration">Watch demonstration ↓</a><a href="#approach">Explore the control approach ↓</a><a href="#analysis">View analysis ↓</a></div>
+  </section>
+
+  <div class="case-content case-content-v3">
+    <section id="problem">
+      <p class="eyebrow">01 / THE ENGINEERING PROBLEM</p>
+      <h2>Keep a moving ball under control.</h2>
+      <p>A ball on a tilting plate is an unstable control problem: a small tilt changes the ball's motion, while the camera directly measures position rather than velocity. The controller therefore needs an estimate of the ball's motion before it commands the plate's servos.</p>
+      <div class="pipeline case-pipeline" aria-label="Ball-on-plate feedback loop">
+        <div class="pipe">CAMERA POSITION</div><span class="arrow" aria-hidden="true">→</span>
+        <div class="pipe">STATE ESTIMATION</div><span class="arrow" aria-hidden="true">→</span>
+        <div class="pipe">FEEDBACK CONTROL</div><span class="arrow" aria-hidden="true">→</span>
+        <div class="pipe">SERVO PLATE TILT</div>
+      </div>
+      <p>The project covers the workflow from a mathematical model and MATLAB simulations to C code for the STM32 control platform and a working physical setup.</p>
+    </section>
+
+    <section id="demonstration">
+      <p class="eyebrow">02 / PROJECT DEMONSTRATION</p>
+      <h2>See the system in motion.</h2>
+      <article class="media-panel">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata" poster="assets/ball-on-plate/demo-poster.jpg" aria-label="Ball-on-plate project demonstration showing camera tracking and plate response">
+            <source src="assets/ball-on-plate/demo.mp4" type="video/mp4">
+            Your browser does not support this video. <a href="assets/ball-on-plate/demo.mp4">Open the demonstration video</a>.
+          </video>
+        </div>
+        <div class="media-copy"><span class="mini-tag">CAMERA TRACKING · PHYSICAL SETUP</span><h3>Ball-on-plate demonstration</h3><p>The recording shows the camera interface and the servo-driven plate responding as the ball moves.</p></div>
+      </article>
+    </section>
+
+    <section id="approach">
+      <p class="eyebrow">03 / MODEL, ESTIMATOR &amp; CONTROLLER</p>
+      <h2>Estimate the states the camera cannot see.</h2>
+      <div class="insight-grid">
+        <article><span class="mini-tag">MODEL</span><h3>Ball and actuator dynamics</h3><p>MATLAB simulations describe the ball's motion on a tilted plate and include servo behavior in the higher-order model.</p></article>
+        <article><span class="mini-tag">STATE ESTIMATION</span><h3>Observers and Kalman filters</h3><p>The project compares second- and third-order observers, a linear Kalman filter and an extended Kalman filter for estimating unmeasured states from position data.</p></article>
+        <article><span class="mini-tag">CONTROL</span><h3>Feedback to the servos</h3><p>The embedded control loop receives camera-derived ball positions, updates the state estimate and computes servo commands for the plate.</p></article>
+        <article><span class="mini-tag">IMPLEMENTATION</span><h3>MATLAB and C</h3><p>Simulation and plotting live alongside STM32-oriented C code for the estimator and feedback-control path.</p></article>
+      </div>
+    </section>
+
+    <section id="analysis">
+      <p class="eyebrow">04 / ANALYSIS &amp; HARDWARE</p>
+      <h2>Compare estimates with recorded motion.</h2>
+      <p>The MATLAB results include a velocity comparison across observer and Kalman filter approaches. The plot below shows their different responses to the same recorded motion; it is a comparison figure, rather than an absolute accuracy claim.</p>
+      <figure class="figure-card full-figure">
+        <button class="zoom-media" data-full="assets/ball-on-plate/velocity-estimates.png" data-caption="Ball velocity comparison from MATLAB analysis" aria-label="Enlarge ball velocity comparison plot">
+          <img src="assets/ball-on-plate/velocity-estimates.png" loading="lazy" alt="MATLAB graph comparing measured-difference velocity with observer, Kalman filter and extended Kalman filter velocity estimates over time">
+        </button>
+        <figcaption><strong>Velocity-estimation comparison</strong><span>Observer, linear Kalman filter and extended Kalman filter traces from the project analysis.</span></figcaption>
+      </figure>
+      <figure class="figure-card full-figure setup-figure">
+        <button class="zoom-media" data-full="assets/ball-on-plate/full-setup.jpg" data-caption="Complete ball-on-plate laboratory setup" aria-label="Enlarge photograph of the complete ball-on-plate setup">
+          <img src="assets/ball-on-plate/full-setup.jpg" loading="lazy" alt="Complete ball-on-plate laboratory rig with overhead camera, light, yellow plate, servos, power supplies and controller board">
+        </button>
+        <figcaption><strong>Complete test setup</strong><span>Overhead camera, illumination, tilting plate, actuators and control electronics.</span></figcaption>
+      </figure>
+    </section>
+
+    <section id="source">
+      <p class="eyebrow">05 / SOURCE CODE</p>
+      <h2>Explore the implementation.</h2>
+      <p>The repository contains MATLAB simulations, the embedded C project, analysis plots and project documentation.</p>
+      <div class="actions"><a class="btn primary" href="https://github.com/Mahendra7754/Ball-on-plate-control-kalman-filter" target="_blank" rel="noopener noreferrer">View project repository ↗</a><a class="btn secondary" href="index.html#projects">← Back to projects</a></div>
+    </section>
+  </div>
+</main>
+<dialog id="image-lightbox" class="image-lightbox"><button class="lightbox-close" type="button" aria-label="Close enlarged image">Close ✕</button><img alt=""><p></p></dialog>
+<footer><span>© <span id="year">2026</span> MAHENDRA SINGH</span><span>ENGINEERING CASE STUDY / BALL-ON-PLATE</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">BACK TO TOP ↑</a></footer>
+<script src="script.js"></script>
+</body>
+</html>
