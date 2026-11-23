@@ -12,4 +12,4 @@ If using Terminal after configuring Git authentication: stage the changed site f
 
 Three local MP4 videos are included: two drone demonstrations and the ball-on-plate recording.
 
-**Before publishing:** replace `YOUR_EMAIL@example.com` in `index.html` with your contact email, or remove that link. Check that any photographed equipment and software is appropriate for public sharing.
+The contact link uses the public email on Mahendra’s GitHub profile. The About portrait is an optimized copy of `mahendra3.jpg` with image metadata removed. Demonstration videos play muted when visible, with controls available for sound and playback.

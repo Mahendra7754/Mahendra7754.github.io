@@ -7,7 +7,7 @@
   <title>Ball-on-Plate Control | Mahendra Singh</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="ball-case">
+<body class="ball-case" id="top">
 <header class="topbar">
   <a class="brand" href="index.html"><span class="brandmark">MS<span class="dot">.</span></span><span>ENGINEERING / PORTFOLIO</span></a>
   <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
@@ -46,7 +46,7 @@
       <h2>See the system in motion.</h2>
       <article class="media-panel">
         <div class="video-frame">
-          <video controls playsinline preload="metadata" poster="assets/ball-on-plate/demo-poster.jpg" aria-label="Ball-on-plate project demonstration showing camera tracking and plate response">
+          <video data-autoplay controls muted loop playsinline preload="metadata" poster="assets/ball-on-plate/demo-poster.jpg" aria-label="Ball-on-plate project demonstration showing camera tracking and plate response">
             <source src="assets/ball-on-plate/demo.mp4" type="video/mp4">
             Your browser does not support this video. <a href="assets/ball-on-plate/demo.mp4">Open the demonstration video</a>.
           </video>
@@ -69,7 +69,7 @@
     <section id="analysis">
       <p class="eyebrow">04 / ANALYSIS &amp; HARDWARE</p>
       <h2>Compare estimates with recorded motion.</h2>
-      <p>The MATLAB results include a velocity comparison across observer and Kalman filter approaches. The plot below shows their different responses to the same recorded motion; it is a comparison figure, rather than an absolute accuracy claim.</p>
+      <p>The MATLAB results include a velocity comparison across observer and Kalman filter approaches. The plot shows how each estimator responds to the same recorded motion; no absolute accuracy figure was calculated from it.</p>
       <figure class="figure-card full-figure">
         <button class="zoom-media" data-full="assets/ball-on-plate/velocity-estimates.png" data-caption="Ball velocity comparison from MATLAB analysis" aria-label="Enlarge ball velocity comparison plot">
           <img src="assets/ball-on-plate/velocity-estimates.png" loading="lazy" alt="MATLAB graph comparing measured-difference velocity with observer, Kalman filter and extended Kalman filter velocity estimates over time">
@@ -93,7 +93,7 @@
   </div>
 </main>
 <dialog id="image-lightbox" class="image-lightbox"><button class="lightbox-close" type="button" aria-label="Close enlarged image">Close ✕</button><img alt=""><p></p></dialog>
-<footer><span>© <span id="year">2026</span> MAHENDRA SINGH</span><span>ENGINEERING CASE STUDY / BALL-ON-PLATE</span><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false">BACK TO TOP ↑</a></footer>
+<footer><span>© <span id="year">2026</span> MAHENDRA SINGH</span><span>ENGINEERING CASE STUDY / BALL-ON-PLATE</span><a href="#top">BACK TO TOP ↑</a></footer>
 <script src="script.js"></script>
 </body>
 </html>
