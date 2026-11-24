@@ -26,6 +26,36 @@ document.querySelectorAll('.filter').forEach(button => button.addEventListener('
 const year = document.querySelector('#year');
 if (year) year.textContent = new Date().getFullYear();
 
+const milestoneTabs = [...document.querySelectorAll('[data-milestone-tab]')];
+if (milestoneTabs.length) {
+  const selectMilestone = (selected, focus = false) => {
+    milestoneTabs.forEach(tab => {
+      const active = tab === selected;
+      tab.classList.toggle('is-active', active);
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+      const panel = document.getElementById(tab.getAttribute('aria-controls'));
+      panel.hidden = !active;
+      panel.classList.toggle('is-active', active);
+    });
+    if (focus) selected.focus();
+  };
+
+  milestoneTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => selectMilestone(tab));
+    tab.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') next = (index + 1) % milestoneTabs.length;
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') next = (index - 1 + milestoneTabs.length) % milestoneTabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = milestoneTabs.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      selectMilestone(milestoneTabs[next], true);
+    });
+  });
+}
+
 const lightbox = document.querySelector('#image-lightbox');
 if (lightbox) {
   const image = lightbox.querySelector('img');
