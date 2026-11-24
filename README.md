@@ -1,4 +1,4 @@
-# Mahendra Singh | Engineering Portfolio (v3)
+# Mahendra Singh | Engineering Portfolio (v4)
 
 Static GitHub Pages website. `index.html` is the homepage. `drone-tracking.html` and `ball-on-plate.html` are engineering case studies.
 
@@ -12,4 +12,4 @@ If using Terminal after configuring Git authentication: stage the changed site f
 
 Three local MP4 videos are included: two drone demonstrations and the ball-on-plate recording.
 
-The contact link uses the public email on Mahendra’s GitHub profile. The About portrait is an optimized copy of `mahendra3.jpg` with image metadata removed. Demonstration videos play muted when visible, with controls available for sound and playback.
+The contact link uses the public email on Mahendra’s GitHub profile. The homepage journey photos are optimized, metadata-free copies of the locally supplied `mahendra10.jpg` (graduation), `mahendra12.jpg` (Reliance Industries), and `mahendra13.jpg` (current portrait). Demonstration videos play muted when visible, with controls available for sound and playback.
