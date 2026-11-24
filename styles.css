@@ -35,3 +35,13 @@
 @media(max-width:600px){.milestone-panel{grid-template-columns:1fr}.milestone-panel img{height:275px;min-height:0;object-position:center top}.milestone-panel#milestone-graduate img{object-position:center top}.milestone-panel#milestone-focus img{object-position:center}.milestone-copy{padding:26px}.milestone-tab{padding:14px}.milestone-tab strong{font-size:13px}}
 @media(max-width:480px){.section.hero{padding-top:55px;padding-bottom:65px}.hero{gap:28px}.hero .actions{gap:8px;margin:25px 0 0}.hero .btn{gap:8px;padding:11px 12px;font-size:12px}.hero-stats{display:none}.milestone-tabs{gap:8px}.milestone-tab{min-height:120px}.milestone-tab small{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.milestone-panel{animation:none}.milestone-tab{transition:none}}
+
+/* CSIR-CSIO case study */
+.art-csio{background-position:70% center}
+.csio-kicker{margin-top:38px}
+.csio-feature{display:grid;grid-template-columns:minmax(0,.38fr) minmax(0,.62fr);gap:36px;align-items:center}
+.csio-feature>div{min-width:0}
+.csio-feature .figure-card img{height:440px;object-fit:contain;background:#162632}
+.csio-hardware .figure-card img{height:430px;background:#162632}
+.csio-case .result-stats strong{font-size:clamp(23px,2.5vw,29px)}
+@media(max-width:720px){.csio-feature{grid-template-columns:1fr;gap:24px}.csio-feature .figure-card img{height:360px}.csio-hardware .figure-card img{height:360px}}

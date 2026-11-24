@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Mahendra Singh's 2022 CSIR-CSIO internship: robotic hand integration, grasp-model testing, sensor experiments and an automated rig that produced 9,000 object images.">
+  <title>Robotic Hand Research at CSIR-CSIO | Mahendra Singh</title>
+  <link rel="stylesheet" href="styles.css?v=6">
+</head>
+<body class="csio-case" id="top">
+<header class="topbar">
+  <a class="brand" href="index.html"><span class="brandmark">MS<span class="dot">.</span></span><span>ENGINEERING / PORTFOLIO</span></a>
+  <button class="menu" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  <nav id="nav"><a href="index.html#about">About</a><a href="index.html#projects">Projects</a><a href="#demonstrations">Demonstrations</a><a href="#dataset">Dataset rig</a><a class="nav-cta" href="index.html#contact">Get in touch ↗</a></nav>
+</header>
+<main>
+  <section class="section case-hero case-hero-v3">
+    <a class="back" href="index.html#projects">← ALL PROJECTS</a>
+    <p class="eyebrow csio-kicker">RESEARCH INTERNSHIP / CSIR-CSIO / JAN–JUN 2022</p>
+    <h1>Robotic hand research.<br><em>Vision, sensing &amp; data acquisition.</em></h1>
+    <p class="case-intro">I integrated hardware and tested grasp-classification models for a prosthetic hand research project, then developed an automated image-acquisition rig to capture objects across different distances, heights and orientations.</p>
+    <div class="case-meta"><span>ROBOTICS</span><span>PYTHON / OPENCV</span><span>RASPBERRY PI / ARDUINO</span><span>SENSORS &amp; ACTUATORS</span></div>
+    <div class="case-hero-media"><img src="assets/csio/workbench.jpg" width="1600" height="738" alt="Robotic hand research workbench with a blue hand prototype and development computers" fetchpriority="high"><div class="case-hero-caption"><strong>At the CSIR-CSIO robotics workbench</strong><span>Chandigarh, India · 2022 internship</span></div></div>
+    <div class="metric-grid case-metrics"><div class="metric"><strong>3</strong><small>Grasp classes</small></div><div class="metric"><strong>90</strong><small>Objects in the dataset</small></div><div class="metric"><strong>100</strong><small>Views per object</small></div><div class="metric"><strong>9,000</strong><small>Images generated</small></div></div>
+    <p class="media-footnote">Dataset totals documented in my internship report: 30 objects per grasp class, captured from 20 camera positions and five object orientations.</p>
+    <div class="jump-links"><a href="#demonstrations">Watch the experiments ↓</a><a href="#dataset">Explore the acquisition rig ↓</a><a href="#outcomes">Read the outcomes ↓</a></div>
+  </section>
+  <div class="case-content case-content-v3">
+    <section id="contribution">
+      <p class="eyebrow">01 / MY CONTRIBUTION</p><h2>Connecting perception to physical grasping.</h2>
+      <p>The internship formed part of CSIR-CSIO's research into computer-vision and accelerometer-based grasp selection for a prosthetic hand. My work covered testing existing AI models on the hand, integrating sensors and actuators, and developing the hardware and software for automated dataset capture.</p>
+      <div class="insight-grid"><article><h3>Model-to-hand integration</h3><p>Ran a pretrained grasp model on Raspberry Pi and connected its output to Arduino-controlled servos on a 3D-printed hand.</p></article><article><h3>Sensor experiments</h3><p>Integrated distance and laser modules with the camera, measured gripper force, and collected motion data with an MPU6050.</p></article><article><h3>Automated acquisition</h3><p>Coordinated camera movement, camera tilt and object rotation with Python and Arduino programs.</p></article><article><h3>Structured training data</h3><p>Organized images by object and grasp class, producing a dataset of 9,000 images for subsequent model development.</p></article></div>
+    </section>
+    <section id="demonstrations">
+      <p class="eyebrow">02 / DEVELOPMENT RECORDINGS</p><h2>See the experiments in motion.</h2>
+      <div class="demo-grid">
+        <article class="media-panel"><div class="video-frame"><video data-autoplay controls muted loop playsinline preload="metadata" poster="assets/csio/vision-testing-poster.jpg" aria-label="Mahendra testing the vision model with different objects"><source src="assets/csio/vision-testing.mp4" type="video/mp4">Your browser does not support this video. <a href="assets/csio/vision-testing.mp4">Open the recording</a>.</video></div><div class="media-copy"><span class="mini-tag">VISION MODEL TESTING</span><h3>Testing objects in front of the camera</h3><p>My laboratory test session with the vision interface, showing how its predictions respond as objects and their positions change.</p></div></article>
+        <article class="media-panel"><div class="video-frame"><video data-autoplay controls muted loop playsinline preload="metadata" poster="assets/csio/capture-rig-poster.jpg" aria-label="Automated image acquisition rig moving the camera and rotating an object"><source src="assets/csio/capture-rig.mp4" type="video/mp4">Your browser does not support this video. <a href="assets/csio/capture-rig.mp4">Open the recording</a>.</video></div><div class="media-copy"><span class="mini-tag">AUTOMATED DATA CAPTURE</span><h3>Moving the camera, rotating the object</h3><p>The acquisition rig repeats a programmed sequence of camera positions and object orientations to collect varied training images.</p></div></article>
+      </div><p class="media-footnote">Silent development recordings from the internship, presented at their original speed.</p>
+    </section>
+    <section id="grasping">
+      <p class="eyebrow">03 / VISION TO ACTUATION</p><h2>From a grasp prediction to finger movement.</h2>
+      <div class="csio-feature"><figure class="figure-card"><button class="zoom-media" data-full="assets/csio/hand-prototype.jpg" data-caption="3D-printed hand used during servo and grasp integration" aria-label="Enlarge robotic hand prototype"><img src="assets/csio/hand-prototype.jpg" width="900" height="1600" loading="lazy" alt="White 3D-printed robotic hand with finger linkages and wiring"></button><figcaption>Hand prototype used during integration.</figcaption></figure><div><p>The Raspberry Pi processed camera images using an existing trained model. It sent the predicted grasp over serial communication to an Arduino Mega, which commanded the hand's servos.</p><div class="chips"><span>Pinch</span><span>Tripod</span><span>Power</span></div><p>The hand could execute the predicted grasp in the laboratory. Testing also exposed limitations when object scale, distance or the number of objects in the scene changed. Those observations motivated additional sensing and a more varied image dataset.</p></div></div>
+      <div class="pipeline"><div class="pipe">Camera image</div><span class="arrow">→</span><div class="pipe">Pretrained grasp model on Raspberry Pi</div><span class="arrow">→</span><div class="pipe">Serial grasp command</div><span class="arrow">→</span><div class="pipe">Arduino Mega + hand servos</div></div>
+    </section>
+    <section id="dataset">
+      <p class="eyebrow">04 / AUTOMATED IMAGE ACQUISITION</p><h2>Build variation into the dataset.</h2>
+      <p>A fixed camera view did not represent the changing viewpoints encountered while approaching an object. I developed an acquisition setup with two axes of camera translation, a rotating object platform and a servo that adjusted camera tilt to keep the object in view.</p>
+      <div class="hardware-grid csio-hardware"><figure class="figure-card"><button class="zoom-media" data-full="assets/csio/capture-rig.jpg" data-caption="Image-acquisition setup with camera translation and object platform" aria-label="Enlarge image acquisition rig"><img src="assets/csio/capture-rig.jpg" width="721" height="1600" loading="lazy" alt="Motorized image acquisition setup with lead screws, black backdrop and Raspberry Pi display"></button><figcaption><strong>Camera motion and object rotation</strong><span>Two translation axes, a rotating platform and a tilting camera.</span></figcaption></figure><figure class="figure-card"><button class="zoom-media" data-full="assets/csio/driver-board.jpg" data-caption="Control electronics for the image-acquisition rig" aria-label="Enlarge motor control electronics"><img src="assets/csio/driver-board.jpg" width="1600" height="1200" loading="lazy" alt="Arduino Nano and stepper driver board with wiring and a cooling fan"></button><figcaption><strong>Embedded motion control</strong><span>Arduino Nano, A4988 stepper drivers and cooling hardware.</span></figcaption></figure></div>
+      <div class="result-stats"><div><span>CAMERA LOCATIONS</span><strong>20</strong><small>Distance and height combinations</small></div><div><span>OBJECT ORIENTATIONS</span><strong>5</strong><small>72° rotation increments</small></div><div><span>CAPTURE PER OBJECT</span><strong>100 images</strong><small>20 positions × 5 orientations</small></div></div>
+      <p>For each of the three grasp classes—pinch, tripod and power—the acquisition software stored each object's images in a separate numbered folder. The completed collection covered 90 objects, with 30 objects per class.</p>
+      <details class="tech-detail"><summary>How Python and Arduino synchronized each capture</summary><p>The Raspberry Pi sent a movement command over USB serial at 9,600 baud. The Arduino performed the movement and returned a confirmation token. Python waited for that acknowledgement before saving the camera frame with OpenCV and moving to the next step. Separate class programs selected the starting positions and capture sequences.</p></details>
+      <div class="pipeline"><div class="pipe">Send motion command</div><span class="arrow">→</span><div class="pipe">Move and adjust camera tilt</div><span class="arrow">→</span><div class="pipe">Confirm completion</div><span class="arrow">→</span><div class="pipe">Capture + save image</div><span class="arrow">→</span><div class="pipe">Advance to next view</div></div>
+    </section>
+    <section id="sensing">
+      <p class="eyebrow">05 / SENSOR EXPERIMENTS</p><h2>Measure more than the camera image.</h2>
+      <figure class="figure-card full-figure"><button class="zoom-media" data-full="assets/csio/force-test.jpg" data-caption="Force-sensing experiment with a servo-actuated gripper" aria-label="Enlarge gripper force experiment"><img src="assets/csio/force-test.jpg" width="1600" height="900" loading="lazy" alt="Yellow gripper holding an object beside a force-sensor circuit and Arduino"></button><figcaption><strong>Gripper force experiment</strong><span>Observing sensor response while lifting and tilting a grasped object.</span></figcaption></figure>
+      <div class="insight-grid"><article><h3>Distance and target selection</h3><p>Integrated a VL53L0X time-of-flight distance sensor and a laser module with the camera to support experiments with object scale and target selection.</p></article><article><h3>Force sensing</h3><p>Used a force-sensitive resistor and a servo-actuated gripper to observe changes in contact force during object movement.</p></article><article><h3>Motion-pattern data</h3><p>Collected MPU6050 accelerometer readings using an ESP8266 board and evaluated classifiers in MATLAB for exploratory hand-motion recognition.</p></article><article><h3>System integration</h3><p>Worked across camera acquisition, serial communication, sensor interfaces, motor control and physical test setups.</p></article></div>
+    </section>
+    <section id="outcomes">
+      <p class="eyebrow">06 / OUTCOMES &amp; ENGINEERING LESSONS</p><h2>Make the test setup part of the solution.</h2>
+      <p>The work connected a vision-model output to physical grasp execution and produced an automated dataset-acquisition workflow. The rig generated 9,000 images across 90 objects for subsequent model training and evaluation.</p>
+      <p>The main lesson was that perception performance depends on the conditions represented in the data. Repeatable camera motion, coordinated image capture and organized files were as important to this project as the classifier itself.</p>
+      <div class="note"><strong>Project context:</strong> laboratory research during my January–June 2022 internship at CSIR–Central Scientific Instruments Organisation, Chandigarh. This case study covers my hardware integration, model testing, sensing experiments and acquisition work.</div>
+      <div class="actions"><a class="btn primary" href="index.html#projects">← Explore all projects</a><a class="btn secondary" href="index.html#contact">Discuss this work ↗</a></div>
+    </section>
+  </div>
+</main>
+<dialog id="image-lightbox" class="image-lightbox" aria-label="Expanded project image"><button class="lightbox-close" type="button" aria-label="Close enlarged image">Close ✕</button><img alt=""><p></p></dialog>
+<footer><span>© <span id="year">2026</span> MAHENDRA SINGH</span><span>ENGINEERING CASE STUDY / CSIR-CSIO</span><a href="#top">BACK TO TOP ↑</a></footer>
+<script src="script.js?v=5"></script>
+</body>
+</html>
