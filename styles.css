@@ -45,3 +45,15 @@
 .csio-hardware .figure-card img{height:430px;background:#162632}
 .csio-case .result-stats strong{font-size:clamp(23px,2.5vw,29px)}
 @media(max-width:720px){.csio-feature{grid-template-columns:1fr;gap:24px}.csio-feature .figure-card img{height:360px}.csio-hardware .figure-card img{height:360px}}
+
+/* Additional project case studies */
+.project-case .case-kicker{margin-top:38px}
+.project-case .case-content-v3 section{scroll-margin-top:105px}
+.project-case .case-hero-media>img{max-height:580px;object-fit:contain}
+.project-case .hardware-grid .figure-card img{height:400px;object-fit:contain;background:#162632}
+.project-case .full-figure img{max-height:560px;object-fit:contain;background:#162632}
+.project-case .inline-link{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.project-case cite,.project-card cite{font-style:italic}
+.project-card .project-body em{font-style:italic;color:inherit}
+.project-case .video-frame video{max-height:680px}
+@media(max-width:760px){.project-case .hardware-grid .figure-card img{height:auto;max-height:520px}}
